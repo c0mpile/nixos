@@ -39,6 +39,21 @@
       # Source Powerlevel10k config
       if [[ -r "${./zsh/p10k.zsh}" ]]; then
         source "${./zsh/p10k.zsh}"
+        
+        if [[ "''${LC_ALL:-''${LC_CTYPE:-$LANG}}" =~ "UTF-8" ]] && (( ''${terminfo[colors]:-0} >= 256 )); then
+          # High capabilities: Use prompt loop with NO icons
+          typeset -g POWERLEVEL9K_VISUAL_IDENTIFIER_EXPANSION=""
+          typeset -g POWERLEVEL9K_VCS_BRANCH_ICON=""
+          typeset -g POWERLEVEL9K_LOCK_ICON=""
+        else
+          # Low capabilities: ASCII mode
+          typeset -g POWERLEVEL9K_MODE=ascii
+          typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_VIINS_CONTENT_EXPANSION=">"
+          typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_VIINS_CONTENT_EXPANSION=">"
+          typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_VICMD_CONTENT_EXPANSION="<"
+          typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_VICMD_CONTENT_EXPANSION="<"
+          typeset -g POWERLEVEL9K_VISUAL_IDENTIFIER_EXPANSION=""
+        fi
       fi
 
       # Keybindings for history search
