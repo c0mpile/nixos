@@ -46,13 +46,18 @@
           typeset -g POWERLEVEL9K_VCS_BRANCH_ICON=""
           typeset -g POWERLEVEL9K_LOCK_ICON=""
         else
-          # Low capabilities: ASCII mode
+          # Low capabilities: ASCII mode with ANSI colors
           typeset -g POWERLEVEL9K_MODE=ascii
           typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_VIINS_CONTENT_EXPANSION=">"
           typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_VIINS_CONTENT_EXPANSION=">"
           typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_VICMD_CONTENT_EXPANSION="<"
           typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_VICMD_CONTENT_EXPANSION="<"
           typeset -g POWERLEVEL9K_VISUAL_IDENTIFIER_EXPANSION=""
+          
+          # Colors (ANSI)
+          typeset -g POWERLEVEL9K_DIR_FOREGROUND=4
+          typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND=2
+          typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND=1
         fi
       fi
 
