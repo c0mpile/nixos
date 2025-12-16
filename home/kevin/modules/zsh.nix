@@ -30,6 +30,8 @@
         "zsh-users/zsh-completions"
         "Aloxaf/fzf-tab"
         "MichaelAquilina/zsh-autoswitch-virtualenv"
+        "nix-community/nix-zsh-completions"
+        "chisui/zsh-nix-shell"
       ];
     };
 
@@ -42,6 +44,9 @@
       # Keybindings for history search
       bindkey '^[[A' history-substring-search-up
       bindkey '^[[B' history-substring-search-down
+
+      # Sudo plugin keybinding (Alt-s)
+      bindkey '^[s' sudo-command-line
     '';
   };
 }
