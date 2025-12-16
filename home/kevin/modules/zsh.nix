@@ -27,7 +27,7 @@
         "ohmyzsh/ohmyzsh path:plugins/eza"
         "ohmyzsh/ohmyzsh path:plugins/encode64"
         "ohmyzsh/ohmyzsh path:plugins/docker-compose"
-        "ohmyzsh/ohmyzsh path:plugins/ghostty"
+        "ohmyzsh/ohmyzsh path:plugins/docker-compose"
         "ohmyzsh/ohmyzsh path:plugins/gh"
         "ohmyzsh/ohmyzsh path:plugins/safe-paste"
         "ohmyzsh/ohmyzsh path:plugins/universalarchive"
@@ -51,6 +51,11 @@
         # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
         # Initialization code that may require console input (password prompts, [y/n]
         # confirmations, etc.) must go above this block; everything else may go below.
+
+        # Define ZSH cache directory for plugins
+        export ZSH_CACHE_DIR="''${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
+        mkdir -p "$ZSH_CACHE_DIR/completions"
+
         if [[ -r "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh" ]]; then
           source "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
         fi
