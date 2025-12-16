@@ -59,5 +59,7 @@
     home-manager
     kdePackages.flatpak-kcm
     kdePackages.discover
+    inputs.hyprwayland-scanner.packages.${pkgs.system}.default
+    inputs.hyprland-guiutils.packages.${pkgs.system}.default
   ];
 }
