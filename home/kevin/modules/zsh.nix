@@ -29,6 +29,7 @@
         "zsh-users/zsh-history-substring-search"
         "zsh-users/zsh-completions"
         "Aloxaf/fzf-tab"
+        "MichaelAquilina/zsh-autoswitch-virtualenv"
       ];
     };
 
