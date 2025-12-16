@@ -34,6 +34,7 @@
         "ohmyzsh/ohmyzsh path:plugins/extract"
         "ohmyzsh/ohmyzsh path:plugins/uv"
         "ohmyzsh/ohmyzsh path:plugins/zoxide"
+        "ohmyzsh/ohmyzsh path:plugins/systemd"
         "zsh-users/zsh-syntax-highlighting"
         "zsh-users/zsh-autosuggestions"
         "zsh-users/zsh-history-substring-search"
@@ -66,6 +67,11 @@
              source "${./zsh/p10k-ascii.zsh}"
            fi
         fi
+
+        # User Aliases
+        if [[ -r "${./zsh/aliases.zsh}" ]]; then
+          source "${./zsh/aliases.zsh}"
+        fi      
 
         # Pay-respects (command corrector)
         eval "$(pay-respects zsh)"

@@ -12,6 +12,8 @@
     tmux
     fastfetch
     btop
+    bat
+    tree
     zsh
     git
     snapper
