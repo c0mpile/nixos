@@ -4,6 +4,7 @@
   imports = [
     ./modules/git.nix
     ./modules/zsh.nix
+    ./modules/nvchad.nix
   ];
 
   home.username = "kevin";

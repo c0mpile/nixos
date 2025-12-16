@@ -7,8 +7,6 @@
 
   environment.systemPackages = with pkgs; [
     wget
-    neovim
-    nvimpager
     rsync
     curl
     tmux
