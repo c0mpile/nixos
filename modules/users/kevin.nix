@@ -60,5 +60,8 @@
       symbols-only
       zed-mono
     ]);
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHCunPpL3oYMINqBCT3gOp9QmAPgJsRkWgRk7wnom1lx desktop"
+    ];
   };
 }
