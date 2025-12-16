@@ -27,6 +27,7 @@
     zoxide
     fzf
     p7zip
+    unzip
     flatpak
     greetd
     tuigreet

@@ -5,6 +5,7 @@
     ./modules/git.nix
     ./modules/zsh.nix
     ./modules/nvchad.nix
+    ./modules/dev.nix
   ];
 
   home.username = "kevin";
