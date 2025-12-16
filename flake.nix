@@ -33,5 +33,20 @@
           }
         ];
       };
+
+      nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./hosts/laptop/default.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.users.kevin = import ./home/kevin/home.nix;
+          }
+        ];
+      };
     };
 }
