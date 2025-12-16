@@ -24,6 +24,16 @@
         "romkatv/powerlevel10k"
         "ohmyzsh/ohmyzsh path:plugins/git"
         "ohmyzsh/ohmyzsh path:plugins/sudo"
+        "ohmyzsh/ohmyzsh path:plugins/eza"
+        "ohmyzsh/ohmyzsh path:plugins/encode64"
+        "ohmyzsh/ohmyzsh path:plugins/docker-compose"
+        "ohmyzsh/ohmyzsh path:plugins/ghostty"
+        "ohmyzsh/ohmyzsh path:plugins/gh"
+        "ohmyzsh/ohmyzsh path:plugins/safe-paste"
+        "ohmyzsh/ohmyzsh path:plugins/universalarchive"
+        "ohmyzsh/ohmyzsh path:plugins/extract"
+        "ohmyzsh/ohmyzsh path:plugins/uv"
+        "ohmyzsh/ohmyzsh path:plugins/zoxide"
         "zsh-users/zsh-syntax-highlighting"
         "zsh-users/zsh-autosuggestions"
         "zsh-users/zsh-history-substring-search"
@@ -56,6 +66,15 @@
              source "${./zsh/p10k-ascii.zsh}"
            fi
         fi
+
+        # Pay-respects (command corrector)
+        eval "$(pay-respects zsh)"
+
+        # Fzf-tab configuration
+        zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+        zstyle ':completion:*' menu no
+        zstyle ':completion:*' use-cache on
+        zstyle ':fzf-tab:*' fzf-flags --bind=right:accept,ctrl-space:toggle,ctrl-a:toggle-all --marker=">"
 
         # Keybindings for history search
         bindkey '^[[A' history-substring-search-up

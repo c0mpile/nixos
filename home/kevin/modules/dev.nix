@@ -6,5 +6,8 @@
     go
     nodejs
     uv
+    pay-respects
+    gh
+    zoxide
   ];
 }
