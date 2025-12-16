@@ -6,6 +6,7 @@
     ./modules/zsh.nix
     ./modules/nvchad.nix
     ./modules/dev.nix
+    ./modules/hyprland
     ./modules/ghostty.nix
   ];
 
