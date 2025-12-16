@@ -42,28 +42,8 @@
     wheelNeedsPassword = false;
   };
 
-  services.displayManager.sddm.enable = false;
-
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd startplasma-wayland";
-        user = "greeter";
-      };
-    };
-  };
-
-  security.pam.services.greetd = {
-    enableGnomeKeyring = true;
-    text = ''
-      auth     required       pam_unix.so try_first_pass nullok
-      account  required       pam_unix.so
-      password sufficient     pam_unix.so nullok try_first_pass yescrypt shadow
-      session  required       pam_unix.so
-      session  optional       pam_gnome_keyring.so auto_start
-    '';
-  };
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
 
   services.openssh.enable = true;
 

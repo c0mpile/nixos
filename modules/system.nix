@@ -31,8 +31,7 @@
     p7zip
     unzip
     flatpak
-    greetd
-    tuigreet
+    flatpak
     home-manager
     kdePackages.flatpak-kcm
     kdePackages.discover
