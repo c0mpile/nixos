@@ -5,6 +5,11 @@
     ./dunst.nix
   ];
 
+  xdg.configFile."hypr/hyprpaper.conf".text = ''
+    preload = ~/Pictures/wallpaper.jpg
+    wallpaper = ,~/Pictures/wallpaper.jpg
+  '';
+
   wayland.windowManager.hyprland = {
     enable = true;
     
@@ -56,7 +61,7 @@
         "systemctl --user start hyprpolkitagent"
         "bash -c \"wl-paste --watch cliphist store &\""
         "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1" # Fallback
-        "gnome-keyring-daemon --start --components=secrets"
+        "/run/current-system/sw/bin/kwalletd5"
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
       ];
 
@@ -193,7 +198,7 @@
         # === Hypr Ecosystem Tools ===
         "$mod, space, exec, rofi -show drun"       # Launcher
         "$mod, V, exec, rofi -modi clipboard:cliphist-rofi-img -show clipboard" # Clipboard
-        "$mod, P, exec, hyprpicker -a"             # Color picker (Color to clipboard)
+        "$mod SHIFT, C, exec, hyprpicker -a"       # Color picker (Color to clipboard)
         "$mod SHIFT, L, exec, hyprlock"            # Lock screen
         "$mod, Escape, exec, wlogout"              # Logout menu
         
