@@ -61,7 +61,7 @@
         "systemctl --user start hyprpolkitagent"
         "bash -c \"wl-paste --watch cliphist store &\""
         "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1" # Fallback
-        "/run/current-system/sw/bin/kwalletd6"
+        "/run/current-system/sw/bin/kwalletd5"
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
       ];
 
@@ -95,8 +95,20 @@
       "$mod" = "SUPER";
 
       bind = [
-        # ... (omitted lines)
-        
+        # === Application Launchers ===
+        "$mod, Return, exec, ghostty"       # Standard terminal (Ghostty)
+        "$mod SHIFT, Return, exec, kitty"   # Secondary terminal (Kitty)
+        "$mod, B, exec, brave"
+        "$mod, E, exec, ghostty -e yazi"
+        "$mod SHIFT, E, exec, ghostty -e nvim"
+        "$mod CTRL, E, exec, nautilus -w"
+        "$mod CTRL, Q, exec, nautilus -q"
+        "$mod, P, exec, brave --app=\"https://perplexity.ai\""
+        "$mod SHIFT, P, exec, brave --app=\"https://mail.proton.me\""
+        "$mod SHIFT, T, exec, brave --app=\"https://t.ytmnd.me\""
+        "$mod CTRL, A, exec, brave --app=\"https://abs.ytmnd.me\""
+        "$mod CTRL, H, exec, brave --app=\"https://hoopladigital.com\""
+
         # === Hypr Ecosystem Tools ===
         "$mod, space, exec, rofi -show drun"       # Launcher
         "$mod, V, exec, rofi -modi clipboard:cliphist-rofi-img -show clipboard" # Clipboard
